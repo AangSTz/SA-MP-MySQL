@@ -26,7 +26,7 @@ cache:
     - mysql-connector-c-6.1.6-src
 
 before_install:
-  - if [ ! -f "mysql-connector-c-6.1.6-src/CMakeLists.txt" ]; then wget "http://dev.mysql.com/get/Downloads/Connector-C/mysql-connector-c-6.1.6-src.tar.gz"; fi
+  - if [ ! -f "mysql-connector-c-6.1.6-src/CMakeLists.txt" ]; then wget "https://downloads.mysql.com/archives/get/p/19/file/mysql-connector-c-6.1.6-linux-glibc2.5-i686.tar.gz"; fi
   - if [ ! -f "mysql-connector-c-6.1.6-src/CMakeLists.txt" ]; then tar xzf mysql-connector-c-6.1.6-src.tar.gz; fi
 
   - wget https://dl.bintray.com/boostorg/release/1.64.0/source/boost_1_64_0.tar.gz

@@ -123,7 +123,7 @@ elseif(UNIX AND NOT MYSQLCAPI_ROOT_DIR)
 		if(NOT EXISTS "${MYSQL_CONNECTOR_TARBALL}")
 			message(STATUS "Downloading MySQL Connector C ${MYSQL_CONNECTOR_VERSION}...")
 			file(DOWNLOAD
-				"https://dlm.mariadb.com/273440/Connectors/c/connector-c-${MYSQL_CONNECTOR_VERSION}/mariadb-connector-c-${MYSQL_CONNECTOR_VERSION}-src.tar.gz"
+				"http://dlm.mariadb.com/273440/Connectors/c/connector-c-${MYSQL_CONNECTOR_VERSION}/mariadb-connector-c-${MYSQL_CONNECTOR_VERSION}-src.tar.gz"
 				"${MYSQL_CONNECTOR_TARBALL}"
 				SHOW_PROGRESS
 				STATUS DOWNLOAD_STATUS

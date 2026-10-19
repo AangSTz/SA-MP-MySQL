@@ -39,8 +39,10 @@ if(WIN32)
 	message(STATUS "Checking which MariaDB Connector C build needs to be downloaded...")
 	if(CMAKE_SIZEOF_VOID_P EQUAL 8 OR TARGET_ARCH STREQUAL "x64")
 		set(MARIADB_ARCH "win64")
+		set(MARIADB_CDN "273441")
 	else()
 		set(MARIADB_ARCH "win32")
+		set(MARIADB_CDN "273443")
 	endif()
 
 	if(NOT DEFINED MYSQLCAPI_ROOT_DIR)
@@ -60,7 +62,7 @@ if(WIN32)
 
 		if(DOWNLOAD_NEEDED)
 			file(DOWNLOAD
-				"https://downloads.mariadb.com/Connectors/c/connector-c-${MARIADB_CONNECTOR_VERSION}/mariadb-connector-c-${MARIADB_CONNECTOR_VERSION}-${MARIADB_ARCH}.msi"
+				"https://dlm.mariadb.com/${MARIADB_CDN}/Connectors/c/connector-c-${MARIADB_CONNECTOR_VERSION}/mariadb-connector-c-${MARIADB_CONNECTOR_VERSION}-${MARIADB_ARCH}.msi"
 				"${MARIADB_MSI_FILE}"
 				SHOW_PROGRESS
 				STATUS DOWNLOAD_STATUS
@@ -121,7 +123,7 @@ elseif(UNIX AND NOT MYSQLCAPI_ROOT_DIR)
 		if(NOT EXISTS "${MYSQL_CONNECTOR_TARBALL}")
 			message(STATUS "Downloading MySQL Connector C ${MYSQL_CONNECTOR_VERSION}...")
 			file(DOWNLOAD
-				"http://dev.mysql.com/get/Downloads/Connector-C/mysql-connector-c-${MYSQL_CONNECTOR_VERSION}-src.tar.gz"
+				"Downloading://dlm.mariadb.com/273440/Connectors/c/connector-c-${MYSQL_CONNECTOR_VERSION}-src.tar.gz"
 				"${MYSQL_CONNECTOR_TARBALL}"
 				SHOW_PROGRESS
 				STATUS DOWNLOAD_STATUS
